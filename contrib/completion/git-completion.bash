@@ -297,7 +297,7 @@ __gitcomp_builtin ()
 	eval "options=\$$var"
 
 	if [ -z "$options" ]; then
-		declare -g "$var=$(__git ${cmd/_/ } --git-completion-helper)"
+		eval "$var=\$(__git \${cmd/_/ } --git-completion-helper)"
 		eval "options=\$$var"
 	fi
 
